@@ -15,7 +15,6 @@
     <name>boot-parent</name>
     <properties>
         <java.version>11</java.version>
-        <cloud.nacos.commons.vesion>2.0.3</cloud.nacos.commons.vesion>
         <cloud.starter.bootstrap>3.1.0</cloud.starter.bootstrap>
         <spring-cloud.version>Hoxton.SR12</spring-cloud.version>
         <spring.cloud.alibaba.version>2.2.7.RELEASE</spring.cloud.alibaba.version>
@@ -27,22 +26,9 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>com.kikyc</groupId>
-            <artifactId>boot-common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -50,9 +36,14 @@
             <version>${cloud.starter.bootstrap}</version>
         </dependency>
         <dependency>
-            <groupId>com.alibaba.nacos</groupId>
-            <artifactId>nacos-common</artifactId>
-            <version>${cloud.nacos.commons.vesion}</version>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>swagger-bootstrap-ui</artifactId>
+            <version>1.9.6</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.9.2</version>
         </dependency>
     </dependencies>
 
