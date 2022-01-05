@@ -1,4 +1,4 @@
-package com.kikyc.bootauth;
+package com.kikyc.auth;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,10 +1,10 @@
-package com.kikyc.bootauth;
+package com.kikyc.gateway;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BootAuthApplicationTests {
+class BootGatewayApplicationTests {
 
     @Test
     void contextLoads() {

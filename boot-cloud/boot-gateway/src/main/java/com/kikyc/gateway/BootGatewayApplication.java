@@ -1,4 +1,4 @@
-package com.kikyc.bootgateway;
+package com.kikyc.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
