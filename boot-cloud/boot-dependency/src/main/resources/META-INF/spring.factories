@@ -1,2 +1,5 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.kikyc.dependency.config.SwaggerConfig
+com.kikyc.dependency.config.SwaggerProperties,\
+com.kikyc.dependency.config.SwaggerConfiguration,\
+com.kikyc.dependency.config.RedisConfiguration,\
+com.kikyc.dependency.util.RedisUtil

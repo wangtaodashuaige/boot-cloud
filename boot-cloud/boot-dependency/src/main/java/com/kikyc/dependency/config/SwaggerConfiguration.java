@@ -1,5 +1,8 @@
 package com.kikyc.dependency.config;
 
+import com.kikyc.common.constant.BasicConstants;
+import lombok.RequiredArgsConstructor;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -13,24 +16,26 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
 @EnableSwagger2
-public class SwaggerConfig {
+@ConditionalOnProperty(name = "swagger.enable", havingValue = "true")
+public class SwaggerConfiguration {
+
     @Bean
-    public Docket createRestApi() {
+    public Docket createRestApi(SwaggerProperties properties) {
         return new Docket(DocumentationType.SWAGGER_2)
-                .apiInfo(apiInfo())
+                .apiInfo(apiInfo(properties))
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.kikyc"))
+                .apis(RequestHandlerSelectors.basePackage(BasicConstants.PACKAGE_PREFIX))
                 .paths(PathSelectors.any())
                 .build();
     }
 
-    private ApiInfo apiInfo() {
+    private ApiInfo apiInfo(SwaggerProperties properties) {
         return new ApiInfoBuilder()
-                .title("Swagger API")
-                .description("test")
+                .title(properties.getTitle())
+                .description(properties.getDescription())
                 .termsOfServiceUrl("")
-                .contact(new Contact("wd", "", ""))
-                .version("2.0")
+                .contact(new Contact("zz", "", ""))
+                .version(properties.getVersion())
                 .build();
     }
 }

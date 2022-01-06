@@ -13,22 +13,7 @@ import springfox.documentation.swagger.web.*;
 @RequestMapping("/swagger-resources")
 @RequiredArgsConstructor
 public class SwaggerHandler {
-//    private final SecurityConfiguration securityConfiguration;
-//    private final UiConfiguration uiConfiguration;
     private final SwaggerResourcesProvider swaggerResources;
-
-
-//    @GetMapping("/configuration/security")
-//    public Mono<ResponseEntity<SecurityConfiguration>> securityConfiguration() {
-//        return Mono.just(new ResponseEntity<>(
-//                Optional.ofNullable(securityConfiguration).orElse(SecurityConfigurationBuilder.builder().build()), HttpStatus.OK));
-//    }
-
-//    @GetMapping("/configuration/ui")
-//    public Mono<ResponseEntity<UiConfiguration>> uiConfiguration() {
-//        return Mono.just(new ResponseEntity<>(
-//                Optional.ofNullable(uiConfiguration).orElse(UiConfigurationBuilder.builder().build()), HttpStatus.OK));
-//    }
 
     @GetMapping("")
     public Mono<ResponseEntity> swaggerResources() {
