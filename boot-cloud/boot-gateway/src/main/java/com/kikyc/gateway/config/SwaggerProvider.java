@@ -27,10 +27,9 @@ public class SwaggerProvider implements SwaggerResourcesProvider {
         List<String> routes = new ArrayList<>();
         //取出gateway的route
         routeLocator.getRoutes().subscribe(route -> routes.add(route.getId()));
-        //结合配置的route-路径(Path)，和route过滤，只获取有效的route节点
+        //结合配置的route过滤，只获取有效的route节点
         gatewayProperties.getRoutes().stream().filter(routeDefinition -> routes.contains(routeDefinition.getId()))
                 .forEach(routeDefinition -> routeDefinition.getPredicates().stream()
-                        .filter(predicateDefinition -> ("Path").equalsIgnoreCase(predicateDefinition.getName()))
                         .forEach(predicateDefinition -> resources.add(swaggerResource(routeDefinition.getId(),
                                 predicateDefinition.getArgs().get(NameUtils.GENERATED_NAME_PREFIX + "0")
                                         .replace("/**", API_URI)))));
